@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDom from "react-dom/client"
+import one from "./images/black-panther.jpg"
+import two from "./images/caption-america.jpg"
+import three from "./images/deadpool.jpg"
+import four from "./images/dr-strange.jpg"
+import five from"./images/hulk.jpg"
+import six from "./images/ironman.png"
+import seven from "./images/spiderman.jpg"
+import eight from "./images/thor.jpg"
+import Page from "./page"
+import "./style.css"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root=ReactDom.createRoot(document.getElementById("root"))
+const itemss=[one,two,three,four,five,six,seven,eight]
+const names=["black panther","caption america","deadpool","Dr-strange","hulk","ironman","spiderman","thor"]
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <>
+  {
+   itemss.map(function(item,index){
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+     return <Page itemss={item} names={names[index]}></Page>
+   })
+  }
+  
+  </>
+)
